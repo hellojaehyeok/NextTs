@@ -1,0 +1,13 @@
+@import "../color.scss";
+
+.header {
+  box-shadow: $grey200 0px 8px 24px;
+  margin-bottom: 20px;
+}
+.header__list {
+  display: flex;
+}
+.header__list_El {
+  padding: 25px;
+  cursor: pointer;
+}
