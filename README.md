@@ -19,6 +19,12 @@ HTTP 비동기 통신: axios
 - 스태틱 파일을 지원한다.
 - 개발 중 저장하면 자동으로 리렌더링이 일어난다.
 
+개발 모드  
+`npm run dev`
+
+프러덕션 모드  
+`npm run build && npm run start`
+
 ## pages
 
 pages 폴더안에 파일을 만들면 자동적으로 라우팅처리가 된다.
@@ -29,7 +35,8 @@ pages
 ├── detail
 │   └─ [id].tsx    -> localhost:3000/detail/1
 ├── _app.tsx        -> localhost:3000
-└── index.tsx       -> localhost:3000
+├── index.tsx       -> localhost:3000
+└── 404.tsx       -> 404 에러시 나오는 페이지
 ```
 
 ### \_app.tsx
@@ -56,3 +63,14 @@ pages
 3. `<Html>`, `<Head>`, `<Main>`, `<NextScript>`는 반드시 포함되어야한다.
 
 `<title>`과 같이 각 페이지 마다 달라질 수 있는 것은 해당 컴포넌트 안에 사용하는게 좋다.
+
+### 404, \_error
+
+404 에러가 나면 기본으로 404 UI를 제공해 주지만 커스텀을 하기 위해서는 `404.tsx`를 만든다.
+404 페이지는 static으로 제공한다.
+
+그 외 에러는 `_error.tsx`에서 처리한다.  
+개발 모드에서는 에러 로그가 뜨고 프러덕션 모드에서 에러 페이지가 뜬다.
+
+`_error` 페이지는 정적으로 제공하지 않는다.  
+에러가 발생했을 때 서버 쪽으로 에러를 동반하는 경우가 많기 떄문이다.
