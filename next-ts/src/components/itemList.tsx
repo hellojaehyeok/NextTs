@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Link from "next/link";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import itemListSelector from "../recoil/itemListSelector";
@@ -12,9 +13,13 @@ const ItemList = ({}) => {
       {itemListArr.map((item, index) => {
         return (
           <ItemElWrap key={item.id}>
-            <img src={item.image_link} alt="이미지 사진" />
-            <div>{item.name}</div>
-            <div>${item.price}</div>
+            <Link href={`/detail/${item.id}`}>
+              <a>
+                <img src={item.image_link} alt="이미지 사진" />
+                <div>{item.name}</div>
+                <div>${item.price}</div>
+              </a>
+            </Link>
           </ItemElWrap>
         );
       })}

@@ -74,3 +74,15 @@ pages
 
 `_error` 페이지는 정적으로 제공하지 않는다.  
 에러가 발생했을 때 서버 쪽으로 에러를 동반하는 경우가 많기 떄문이다.
+
+## 페이지 이동
+
+`<Link>` 태그를 사용하여 페이지 이동을 한다.
+
+```tsx
+import Link from "next/link";
+...
+<Link href={`/detail/${item.id}`}>
+  <a>item</a>
+</Link>
+```
