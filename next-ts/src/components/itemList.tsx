@@ -34,6 +34,11 @@ const ItemElWrap = styled.li`
   width: 33%;
   text-align: center;
   padding: 0 20px 50px;
+  cursor: pointer;
+  transition: 400ms;
+  &:hover {
+    transform: translateY(-20px);
+  }
   & div {
     width: 100%;
     overflow: hidden;
