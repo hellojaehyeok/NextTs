@@ -10,7 +10,18 @@ HTTP 비동기 통신: axios
 
 - 이전에는 react.js, redux, styled-components, fetch로 진행했다.
 
+next typescript 설치
+
+```
+npx create-next-app --typescript new-project
+```
+
 # Next.js
+
+## 특징
+
+<details>
+<summary>특징</summary>
 
 - Next는 React 기반의 프레임워크이다.
 - 폴더 및 파일 기반으로 라우팅을 지원한다.
@@ -25,7 +36,13 @@ HTTP 비동기 통신: axios
 프러덕션 모드  
 `npm run build && npm run start`
 
+</details>
+<br />
+
 ## pages
+
+<details>
+<summary>pages</summary>
 
 pages 폴더안에 파일을 만들면 자동적으로 라우팅처리가 된다.
 
@@ -75,7 +92,14 @@ pages
 `_error` 페이지는 정적으로 제공하지 않는다.  
 에러가 발생했을 때 서버 쪽으로 에러를 동반하는 경우가 많기 떄문이다.
 
+</details>
+
+<br />
+
 ## 페이지 이동
+
+<details>
+<summary>페이지 이동</summary>
 
 `<Link>` 태그를 사용하여 페이지 이동을 한다.
 
@@ -86,3 +110,5 @@ import Link from "next/link";
   <a>item</a>
 </Link>
 ```
+
+</details>
