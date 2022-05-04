@@ -48,12 +48,13 @@ pages 폴더안에 파일을 만들면 자동적으로 라우팅처리가 된다
 
 ```
 pages
-├── about.tsx       -> localhost:3000/about
+├── about.tsx   -> localhost:3000/about
 ├── detail
-│   └─ [id].tsx    -> localhost:3000/detail/1
-├── _app.tsx        -> localhost:3000
-├── index.tsx       -> localhost:3000
-└── 404.tsx       -> 404 에러시 나오는 페이지
+│   └─ [id].tsx   -> localhost:3000/detail/1
+├── _app.tsx    -> localhost:3000
+├── index.tsx   -> localhost:3000
+├── _error.tsx    -> 에러시 나오는 페이지
+└── 404.tsx   -> 404 에러시 나오는 페이지
 ```
 
 ### \_app.tsx
@@ -101,7 +102,13 @@ pages
 <details>
 <summary>페이지 이동</summary>
 
+1. Link
+
 `<Link>` 태그를 사용하여 페이지 이동을 한다.
+
+- 외부 페이지의 링크는 a태그로 넣는다.
+- className과 같은 속성을 추가할 때는 a태그에 추가한다.
+- 페이지 새로고침 없이 로드된다.
 
 ```tsx
 import Link from "next/link";
@@ -109,6 +116,20 @@ import Link from "next/link";
 <Link href={`/detail/${item.id}`}>
   <a>item</a>
 </Link>
+```
+
+2. router
+
+`Router` 를 사용하여 페이지 이동을 한다.
+
+- `window.location`과 유사하게 동작하며 태그를 생성하지 않습니다.
+- 크롤러가 링크를 감지하지 못하여 SEO가 취약하다.
+- `<Link>`는 바로 페이지 이동을 하지만 라우터는 로직을 처리 후 원하는 시점에서 이동이 가능하다.
+
+```tsx
+import Router from 'next/router';
+...
+<button onClick={() => Router.push('/')}>Home</button>
 ```
 
 </details>
