@@ -30,6 +30,30 @@ npx create-next-app --typescript new-project
 - 스태틱 파일을 지원한다.
 - 개발 중 저장하면 자동으로 리렌더링이 일어난다.
 
+### Pre-rendering
+
+Next.js는모든 페이지를 사전 렌더링한다.  
+이는 더 좋은 퍼포먼스와 SEO에 좋다.
+
+1. 정적 생성
+2. Server Side Rendering (SSR, Dynamic Rendering)
+   두 가지 종류의 프리 렌더링이 존재한하며 언제 html을 생성하느냐의 차이점이 있다.
+
+#### 정적 생성
+
+- 프로젝트가 빌드 되는 시점에서 html파일을 생성한다.
+- 모든 요청에 재사용된다.
+- 퍼포먼스 이유로, Next.js에서는 정적 생성을 권고한다.
+- 정적 생성된 페이지들을 CDN에 캐싱된다.
+- 유저가 요청을 하기 전에 미리 페이지를 만들어두어도 상관없다면 사용한다. (블로그 게시물, 상품 리스트, 도움말)
+- getStaticProps / getStaticPaths
+
+#### Server Side Rendering
+
+- 매 요청마다 html 파일을 생성한다. (조금 느릴 수 있다.)
+- 항상 최신 상태를 유지한다.
+- getServerSideProps
+
 개발 모드  
 `npm run dev`
 
