@@ -1,20 +1,18 @@
 Next.js, Typescript 연습
 
-목표 : 프로젝트를 통해 다양한 기술들을 익힌다.  
-익숙한 방법에서 벗어나 새로운 기술을 익히고싶다.
+이번 프로젝트를 통해 다양한 기술들을 익힌는것이 목표다.
 
 코어: Next.js, TypeScript  
 상태 관리: Recoil  
 스타일링: emotion, scss  
 HTTP 비동기 통신: axios
 
-- 이전에는 react.js, redux, styled-components, fetch로 진행했다.
+## 블로그 정리
 
-next typescript 설치
-
-```
-npx create-next-app --typescript new-project
-```
+1. [Next.js 특징](https://talkwithcode.tistory.com/94)
+2. [Next.js 시작하기 (typescript)](https://talkwithcode.tistory.com/95)
+3. [Next.js \_app과 \_document에 대하여](https://talkwithcode.tistory.com/96)
+4. [Next.js Dynamic Routes를 알아보자](https://talkwithcode.tistory.com/97)
 
 # Next.js
 
