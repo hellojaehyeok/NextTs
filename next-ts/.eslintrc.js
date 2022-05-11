@@ -10,8 +10,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 'es5',
     ecmaFeatures: { jsx: true },
+    jsx: true,
+    useJSXTextNode: true,
   },
 
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
