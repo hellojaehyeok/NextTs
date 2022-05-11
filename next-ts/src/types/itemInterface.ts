@@ -1,4 +1,4 @@
-export interface IItemEl {
+export interface IItemType {
   api_featured_image: string;
   brand: string;
   category: null;

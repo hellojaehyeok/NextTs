@@ -1,16 +1,31 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
-import React from "react";
-import { useRecoilValue } from "recoil";
-import itemListSelector from "../recoil/itemListSelector";
-import { IItemEl } from "../types/itemInterface";
+import styled from '@emotion/styled';
+import axios from 'axios';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+// import { useRecoilValue } from 'recoil';
+// import itemListSelector from '../recoil/itemListSelector';
+import { IItemType } from '../types/itemInterface';
 
-const ItemList = ({}) => {
-  const itemListArr: IItemEl[] = useRecoilValue(itemListSelector);
+const API__URL = 'http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline';
+
+const ItemList = () => {
+  // 비동기 통신을 recoil로 하는것이 효과적인가? 궁금하다.
+  // const itemListArr: IItemType[] = useRecoilValue(itemListSelector);
+
+  const [itemListArr, setItemListArr] = useState<IItemType[]>([]);
+
+  const getListData = async () => {
+    const list: IItemType[] = await axios.get(API__URL).then((res: any) => res.data);
+    setItemListArr([...list]);
+  };
+
+  useEffect(() => {
+    getListData();
+  }, []);
 
   return (
     <List>
-      {itemListArr.map((item, index) => {
+      {itemListArr.map(item => {
         return (
           <ItemElWrap key={item.id}>
             <Link href={`/detail/${item.id}`}>
