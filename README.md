@@ -155,3 +155,54 @@ import Router from 'next/router';
 ```
 
 </details>
+
+## getServerSideProps
+
+<details>
+<summary>서버사이트 렌더링</summary>
+
+구 버전에서는 data fetching을 getInitialProps로 진행하였지만,  
+9.3부터는 getStaticProps, getStaticPaths, getServerSideProps로 나뉜다.
+
+빌드와 상관없이 매 요청마다 서버에서 데이터를 가져온다.
+
+### 사용법
+
+```javascript
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // 페이지 컴포넌트에 props로 넘길 것
+  };
+}
+```
+
+### return
+
+3가지의 선택적 리턴 값을 가진다.
+
+1. props : 해당 컴포넌트로 리턴할 값
+2. redirect : 페이지 접속 시 지정한 경로로 페이지를 리디렉션 시키기 위해 사용되는 값
+   - { destination: string, permanent: boolean } 형태를 가진다.
+   - status 코드가 필요하거나 변경해야 할 때는 permanent 대신 statusCode를 사용한다.
+3. notFound : Boolean 값, true일 경우 404 status와 에러 페이지를 보여준다.
+   - 데이터 통신에 실패하였을 때 사용한다.
+
+### context
+
+getServerSideProps는 context 파라미터를 받는다.
+
+1. params: 다이나믹 라우트 페이지면 해당 데이터를 가져온다.
+2. req: Request 정보
+3. res: Response 정보
+4. query: 쿼리 스트링
+5. preview: Preview 모드 사용 유무
+6. previewData: Preview 모드 사용 시 전달된 데이터
+7. resolvedUrl: 짧은 URL
+   - ex) http://localhost:3000/detail/100 -> /detail/740
+8. locale: 현재 locale 정보
+9. locales: 지원되는 모든 locale 정보
+10. defaultLocale: 기본 locale 정보
+
+preview mode에 대해서는 공부가 필요하다.
+
+</details>
