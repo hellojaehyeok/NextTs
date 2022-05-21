@@ -13,6 +13,8 @@ HTTP 비동기 통신: axios
 2. [Next.js 시작하기 (typescript)](https://talkwithcode.tistory.com/95)
 3. [Next.js \_app과 \_document에 대하여](https://talkwithcode.tistory.com/96)
 4. [Next.js Dynamic Routes를 알아보자](https://talkwithcode.tistory.com/97)
+5. [Next.js 페이지 이동 Link, Router](https://talkwithcode.tistory.com/98)
+6. [Next.js getServerSideProps, getStaticProps, getStaticPaths](https://talkwithcode.tistory.com/99)
 
 # Next.js
 
